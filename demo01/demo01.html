@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<h2>fadeOut</h2>
+<div>
+    <p>测试文字淡出效果</p>
+    <p>慕课网，专注分享</p>
+</div>
+
+
+淡出的隐藏效果
+<select name="jq_fadeout" id="animation">
+    <option value="1">fadeOut()</option>
+    <option value="2">fadeOut('slow')</option>
+    <option value="3">fadeOut(3000)</option>
+    <option value="4">fadeOut(1000, complete)</option>
+    <option value="5">fadeOut(1000,'linear')</option>
+    <option value="6">fadeOut(options)</option>
+</select>
+
+<br/><br/>
+
+<input type="button" id="btnFadeOut" value="点击淡出隐藏"/>
+<input type="button" id="btnShow" value="显示"/>
+
+
+<script src="../jquery-1.12.1.min.js"></script>
+<script src="demo01.js"></script>
+<script>
+    $(function () {
+        $('#btnShow').on('click', function () {
+            $('div').eq(0).show();
+        });
+        $('#btnFadeOut').on('click', function () {
+            var v = $('#animation').val();
+            if(v == '1') {
+                $('div').eq(0).fadeOut();
+            }else if(v == '2') {
+                $('div').eq(0).fadeOut('slow');
+            }else if(v == '3') {
+                $('div').eq(0).fadeOut(3000);
+            }else if(v == '4') {
+                $('div').eq(0).fadeOut(1000, function () {
+                    alert('complete');
+                });
+            }else if(v == '5') {
+                $('div').eq(0).fadeOut(1000, 'linear');
+            }else if(v == '6') {
+                $('div').eq(0).fadeOut({
+                    duration: 1000
+                });
+            }
+        })
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
