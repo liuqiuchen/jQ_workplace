@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标事件</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<div id="test">点击触发，打印数据</div>
+
+<button>元素绑定事件，弹出回调中的this</button>
+
+<p style="border: 1px solid red;">
+   $('button:first').click(function (e) {alert(this)});
+</p>
+<button>触发指定事件</button>
+
+<button>不同函数传递数据</button>
+
+<script src="../jquery-1.12.1.min.js"></script>
+<script src="demo01.js"></script>
+
+
+</body>
+</html>

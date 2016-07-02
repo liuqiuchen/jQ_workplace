@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>toggle、fadeToggle和slideToggle解析</title>
+    <style>
+        div#myDiv {
+            width: 100px;
+            height: 100px;
+            background: lightcoral;
+        }
+    </style>
+</head>
+<body>
+
+<div id="myDiv"></div>
+<button id="myBtn">开始按钮</button>
+<p id="result"></p>
+
+
+<script src="../jquery-1.12.1.min.js"></script>
+<script>
+    $(function () {
+        $('#myBtn').on('click', function () {
+            $('#myDiv').animate({
+                height: '50'
+            },{
+                duration: 5000,
+                progress: function (now, progressNum) {
+                    $('#result').text('动画执行的进度百分比为：' + (progressNum.toFixed(2)*100).toFixed(0) + '%');
+                },
+                complete: function () {
+                    console.log('动画完成');
+                }
+            });
+        });
+
+    });
+</script>
+
+
+</body>
+</html>
