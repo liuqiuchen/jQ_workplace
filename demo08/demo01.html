@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .aaron1 {
+            width: 500px;
+            height: 200px;
+            background: lightgreen;
+        }
+    </style>
+</head>
+<body>
+
+<p>
+    click事件其实是由mousedown于mouseup 2个动作构成，所以点击的动作只有在松手后才触发
+</p>
+<div id="test">点击触发</div>
+
+<div class="aaron1">
+    <p>鼠标在绿色区域移动触发mousemove</p>
+    <p>移动的x位置：</p>
+</div>
+
+<script src="../jquery-1.12.1.min.js"></script>
+<script>
+    $(function () {
+        $('#test').mousedown(1111, function (e) {
+            alert(e.data);
+            console.log(e);
+        });
+
+        //绑定一个mousemove事件
+        //触发后修改内容
+        $(".aaron1").mousemove('数据放在这里',function( e) {
+            $(this).find('p:last').html('移动的X位置：' + e.pageX);
+            // 打印数据
+            console.log(e.data);
+        })
+    });
+</script>
+
+</body>
+</html>

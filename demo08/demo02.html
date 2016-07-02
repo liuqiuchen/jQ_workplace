@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>mouseover和mouseout事件</title>
+    <style>
+        h1 {
+            width: 400px;
+            height: 30px;
+            line-height: 30px;
+            background: lightgreen;
+        }
+        #test2 {
+            width: 500px;
+            height: 300px;
+            background: lightgreen;
+        }
+        #test2 p {
+            width: 298px;
+            height: 198px;
+            margin: 0 100px 0 100px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="test1">
+    <h1>mouseover与mouseout事件</h1>
+    <button>点击触发h1的mouseover事件</button>
+</div>
+
+<script src="../jquery-1.12.1.min.js"></script>
+<script>
+    $(function () {
+        $('h1:eq(0)').mouseover(function () {
+            alert('h1 mouseover');
+        });
+        $('button').click(function () {
+            $('h1:eq(0)').mouseover();
+        });
+    });
+</script>
+
+<div id="test2">
+    <p>
+        鼠标进入此区域触发mouseover事件
+    </p>
+    <a href="javascript:void(0);">移入的次数：0</a>
+</div>
+<script>
+    $(function () {
+        var count = 0;
+        $('p').mouseover(function () {
+            $('a:eq(0)').html('移入的次数：' + (++count));
+        });
+    });
+</script>
+
+</body>
+</html>
